@@ -22,7 +22,6 @@ public class MineSweeperImpl implements MineSweeper {
         for (int i = 0; i < rows.length; i++) {
             this.mineField[i] = rows[i].toCharArray();
         }
-
     }
 
     public String getHintField() throws IllegalStateException {
@@ -33,7 +32,7 @@ public class MineSweeperImpl implements MineSweeper {
         for (int i = 0; i < this.mineField.length; i++) {
             for (int j = 0; j < this.mineField[i].length; j++) {
                 if (this.mineField[i][j] == '*') {
-                    result.append(this.mineField[i][j]);
+                    result.append("*");
                     continue;
                 }
                 result.append(getAdjacentMines(i, j));
@@ -61,5 +60,4 @@ public class MineSweeperImpl implements MineSweeper {
         }
         return adjacentMines;
     }
-
 }
