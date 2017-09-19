@@ -69,7 +69,7 @@ public class MineSweeperImplTest {
     public void testGetHintFieldWithNotInitialisedMineField() throws Exception {
 
         //when
-        String result = mineSweeper.getHintField();
+        mineSweeper.getHintField();
 
     }
 

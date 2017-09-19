@@ -13,8 +13,7 @@ public class MineSweeperImpl implements MineSweeper {
         }
         String[] rows = mineField.split("\n");
 
-        if (Arrays.asList(rows)
-                .stream()
+        if (Arrays.stream(rows)
                 .anyMatch(s -> s.length() != rows[0].length())) {
             throw new IllegalArgumentException("Two rows cannot have different length!");
         }
@@ -22,13 +21,6 @@ public class MineSweeperImpl implements MineSweeper {
 
         for (int i = 0; i < rows.length; i++) {
             this.mineField[i] = rows[i].toCharArray();
-        }
-
-        for (int i = 0; i < this.mineField.length; i++) {
-            for (int j = 0; j < this.mineField[i].length; j++) {
-                System.out.print(this.mineField[i][j] + " ");
-            }
-            System.out.println();
         }
 
     }
