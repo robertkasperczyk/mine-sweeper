@@ -40,9 +40,14 @@ public class MineSweeperImpl implements MineSweeper {
             result.append('\n');
         }
 
-        return result.deleteCharAt(result.length()-1).toString();
+        return result.deleteCharAt(result.length() - 1).toString();
     }
 
+    /**
+     * @param i height coordinate
+     * @param j width coordinate
+     * @return number of adjacent mines to point with (i,j) coordinates
+     */
     private int getAdjacentMines(int i, int j) {
         int adjacentMines = 0;
         for (int k = -1; k < 2; k++) {
